@@ -1,0 +1,22 @@
+systemctl stop cups.service 
+systemctl stop cups.socket 
+systemctl stop cups.path
+systemctl stop iscsi.service
+systemctl stop libvirtd.service
+systemctl stop remote-fs.target
+systemctl stop mdmonitor.service
+systemctl stop nfs-server.service
+systemctl stop nfs.service
+systemctl stop nfs-client.target 
+systemctl stop bluetooth.service
+
+systemctl disable cups.service 
+systemctl disable iscsi.service
+systemctl disable libvirtd.service
+systemctl disable vmtoolsd.service
+systemctl disable remote-fs.target
+systemctl disable mdmonitor.service
+systemctl disable nfs-server.service
+systemctl disable nfs.service
+systemctl disable nfs-client.target 
+systemctl disable bluetooth.service

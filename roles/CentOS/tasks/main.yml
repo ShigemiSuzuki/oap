@@ -1,18 +1,114 @@
-#- include: tasks/check.yml
+---
+#- name: set hostname
+#  hostname:
+#    name: "{{ sv_hostname }}"
 
-- name: disable selinux
-  selinux:
-    state: disabled
+- name: Turn off firewalld service
+  service: 
+    name: "firewalld"
+    state: "stopped"
+    enabled: "no"
 
-- name: set hostname
-  hostname:
-    name: "{{ inventory_hostname }}"
+- name: Backup default files 【　/etc/hosts　】
+  shell: cp -a /etc/hosts{,_org}
+  args:
+    creates: /etc/hosts_org
 
-- name: set timezone
-  timezone:
-    name: "{{ vars.timezone }}"
+- name: Copy /etc/hosts
+  copy:
+    src: "hosts_oap"
+    dest: /etc/hosts 
 
-- name: Install Zabbix Repo
+- name: Backup default files 【　/etc/postfix/main.cf　】
+  shell: cp -a /etc/postfix/main.cf{,_org}
+  args:
+    creates: /etc/postfix/main.cf_org
+
+- name: Backup default files 【　/etc/postfix/transport　】
+  shell: cp -a /etc/postfix/transport{,_org}
+  args:
+    creates: /etc/postfix/transport_org
+
+- name: Backup default files 【　/etc/aliases　】
+  shell: cp -a /etc/aliases{,_org}
+  args:
+    creates: /etc/aliases_org
+
+- name: Copy postfix main.cf
+  copy:
+    src: main.cf_oap
+    dest: /etc/postfix/main.cf
+
+- name: Copy postfix transport
+  copy:
+    src: transport_oap
+    dest: /etc/postfix/transport
+
+- name: Copy aliases
+  copy:
+    src: aliases_oap
+    dest: /etc/aliases
+
+- name: Restart postfix
+  service:
+    name: postfix
+    state: restarted
+    enabled: yes
+
+- name: Backup default files 【　/etc/named.conf　】
+  shell: cp -a /etc/named.conf{,_org}
+  args:
+    creates: /etc/named.conf_org
+
+- name: Copy /etc/named.conf
+  copy:
+    src: named.conf_oap
+    dest: /etc/named.conf
+    group: named
+    mode: 0640
+
+- name: Copy /var/named/oap.local.zone
+  copy:
+    src: oap.local.zone
+    dest: /var/named/oap.local.zone
+    group: named
+    mode: 0640
+
+- name: Copy /var/named/oap.local.rev
+  copy:
+    src: oap.local.rev
+    dest: /var/named/oap.local.rev
+    group: named
+    mode: 0640
+
+#- name: get webmin
+#  get_url :
+#    url: "http://download.webmin.com/download/yum/webmin-1.970-1.noarch.rpm"
+#    dest: /tmp
+
+- name: perl-Net-SSLeay 
   yum:
-    name: "{{repo_url}}"
+    name: perl-Net-SSLeay
     state: present
+
+#- name: webmin install
+#  yum:
+#    name: /tmp/webmin-1.970-1.noarch.rpm
+#    state: present
+#    use_backend: yum
+
+- name: Backup default files 【　/etc/chrony.conf　】
+  shell: cp -a /etc/chrony.conf{,_org}
+  args:
+    creates: /etc/chrony.conf_org
+
+- name: Copy /etc/chrony.conf
+  copy:
+    src: chrony.conf_oap
+    dest: /etc/chrony.conf
+
+- name: Restart chronyd
+  service:
+    name: chronyd
+    state: restarted
+    enabled: yes

@@ -1,0 +1,19 @@
+$TTL	1D
+@		IN	SOA	sv01.oap.local. admin.oap.local.(
+		2021011201	; Serial
+		1H		; time-to-refresh 1h
+		10M		; time-to-retry 10min
+		1W		; time-to-expire 1week
+		3H )		; minimum-TTL 3h
+;
+		IN	NS	sv01.oap.local.
+		IN	NS	sv02.oap.local.
+131	IN	PTR	sv01.oap.local.
+132	IN	PTR	sv02.oap.local.
+133	IN	PTR	sv03.oap.local.
+138	IN	PTR	pc01.oap.local.
+134	IN	PTR	sv01-ilo.oap.local.
+135	IN	PTR	sv02-ilo.oap.local.
+136	IN	PTR	sv03-ilo.oap.local.
+137	IN	PTR	ntp.oap.local.
+

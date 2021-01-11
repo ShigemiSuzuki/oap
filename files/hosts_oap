@@ -1,0 +1,7 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+# ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+# 2021/01/12
+172.16.11.131	sv01	sv01.oap.local
+172.16.11.132	sv02	sv02.oap.local
+172.16.11.133	sv03	sv03.oap.local

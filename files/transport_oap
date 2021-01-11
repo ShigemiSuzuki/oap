@@ -1,0 +1,13 @@
+# Transport oap 
+archive.oap	smtp:[192.168.1.112]:25
+mg.oap.local	smtp:[sv03.oap.local]
+01.oap.local	smtp:[172.16.11.140]
+02.oap.local	smtp:[172.16.12.10]
+03.oap.local	smtp:[172.16.13.10]
+04.oap.local	smtp:[172.16.14.10]
+05.oap.local	smtp:[172.16.15.10]
+06.oap.local	smtp:[172.16.16.10]
+07.oap.local	smtp:[172.16.17.10]
+08.oap.local	smtp:[172.16.18.10]
+09.oap.local	smtp:[172.16.19.10]
+10.oap.local	smtp:[172.16.20.10]

@@ -1,0 +1,38 @@
+$TTL 1D
+@       IN SOA  sv01.oap.local. admin.oap.local. (
+		2021011201      ; serial
+		1H              ; time-to-refresh 1h
+		10M             ; time-to-retry 10min
+		1W              ; time-to-expire 1week
+		3H )            ; minimum-TTL 3h
+;
+	IN	NS	sv01.oap.local.
+	IN	NS	sv02.oap.local.
+	IN	MX 0	sv01.oap.local.
+	IN	MX 100	sv02.oap.local.
+mg	IN	MX 0	sv03.oap.local.
+;
+mail	IN	A	172.16.11.131
+;
+sv01	IN	A	172.16.11.131
+sv02	IN	A	172.16.11.132
+sv03	IN	A	172.16.11.133
+pc01	IN	A	172.16.11.138
+ntp     IN	A	172.16.11.137
+sv01-ilo	IN      A	172.16.11.134
+sv02-ilo	IN      A	172.16.11.135
+sv03-ilo	IN      A	172.16.11.136
+zabbix		IN	CNAME	sv03
+archive		IN	CNAME	sv03
+;
+fax.01	IN	A	172.16.11.10
+fax.02	IN	A	172.16.12.10
+fax.03	IN	A	172.16.13.10
+fax.04	IN	A	172.16.14.10
+fax.05	IN	A	172.16.15.10
+fax.06	IN	A	172.16.16.10
+fax.07	IN	A	172.16.17.10
+fax.08	IN	A	172.16.18.10
+fax.09	IN	A	172.16.19.10
+fax.10	IN	A	172.16.20.10
+

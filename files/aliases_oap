@@ -1,0 +1,146 @@
+#
+#  Aliases in this file will NOT be expanded in the header from
+#  Mail, but WILL be visible over networks or from /bin/mail.
+#
+#	>>>>>>>>>>	The program "newaliases" must be run after
+#	>> NOTE >>	this file is updated for any changes to
+#	>>>>>>>>>>	show through to sendmail.
+#
+
+# Basic system aliases -- these MUST be present.
+mailer-daemon:	postmaster
+postmaster:	root
+
+# General redirections for pseudo accounts.
+bin:		root
+daemon:		root
+adm:		root
+lp:		root
+sync:		root
+shutdown:	root
+halt:		root
+mail:		root
+news:		root
+uucp:		root
+operator:	root
+games:		root
+gopher:		root
+ftp:		root
+nobody:		root
+radiusd:	root
+nut:		root
+dbus:		root
+vcsa:		root
+canna:		root
+wnn:		root
+rpm:		root
+nscd:		root
+pcap:		root
+apache:		root
+webalizer:	root
+dovecot:	root
+fax:		root
+quagga:		root
+radvd:		root
+pvm:		root
+amandabackup:		root
+privoxy:	root
+ident:		root
+named:		root
+xfs:		root
+gdm:		root
+mailnull:	root
+postgres:	root
+sshd:		root
+smmsp:		root
+postfix:	root
+netdump:	root
+ldap:		root
+squid:		root
+ntp:		root
+mysql:		root
+desktop:	root
+rpcuser:	root
+rpc:		root
+nfsnobody:	root
+pcp:		root
+
+ingres:		root
+system:		root
+toor:		root
+manager:	root
+dumper:		root
+abuse:		root
+
+newsadm:	news
+newsadmin:	news
+usenet:		news
+ftpadm:		ftp
+ftpadmin:	ftp
+ftp-adm:	ftp
+ftp-admin:	ftp
+www:		webmaster
+webmaster:	root
+noc:		root
+security:	root
+hostmaster:	root
+info:		postmaster
+marketing:	postmaster
+sales:		postmaster
+support:	postmaster
+
+
+# trap decode to catch security attacks
+decode:		root
+
+# Person who should get root's mail
+#root:		marc
+root:		oapadmin@mg.oap.local
+
+# IP-fax
+all-ipfax:  :include:/etc/postfix/SendLists/all-ipfax.list
+grp-001:    fax=#**00001@01.oap.local
+grp-002:    fax=#**00002@01.oap.local
+grp-003:    fax=#**00003@01.oap.local
+grp-004:    fax=#**00004@01.oap.local
+grp-005:    fax=#**00005@01.oap.local
+grp-006:    fax=#**00006@01.oap.local
+grp-007:    fax=#**00007@01.oap.local
+grp-008:    fax=#**00008@01.oap.local
+grp-009:    fax=#**00009@01.oap.local
+grp-010:    fax=#**00010@01.oap.local
+grp-011:    fax=#**00011@01.oap.local
+grp-012:    fax=#**00012@01.oap.local
+grp-013:    fax=#**00013@01.oap.local
+grp-014:    fax=#**00014@01.oap.local
+grp-015:    fax=#**00015@01.oap.local
+grp-016:    fax=#**00016@01.oap.local
+grp-017:    fax=#**00017@01.oap.local
+grp-018:    fax=#**00018@01.oap.local
+grp-019:    fax=#**00019@01.oap.local
+grp-020:    fax=#**00020@01.oap.local
+grp-021:    fax=#**00021@01.oap.local
+grp-022:    fax=#**00022@01.oap.local
+grp-023:    fax=#**00023@01.oap.local
+grp-024:    fax=#**00024@01.oap.local
+grp-025:    fax=#**00025@01.oap.local
+grp-026:    fax=#**00026@01.oap.local
+grp-027:    fax=#**00027@01.oap.local
+grp-028:    fax=#**00028@01.oap.local
+grp-029:    fax=#**00029@01.oap.local
+grp-030:    fax=#**00030@01.oap.local
+grp-031:    fax=#**00031@01.oap.local
+grp-032:    fax=#**00032@01.oap.local
+grp-033:    fax=#**00033@01.oap.local
+grp-034:    fax=#**00034@01.oap.local
+grp-035:    fax=#**00035@01.oap.local
+grp-036:    fax=#**00036@01.oap.local
+grp-037:    fax=#**00037@01.oap.local
+grp-038:    fax=#**00038@01.oap.local
+grp-039:    fax=#**00039@01.oap.local
+grp-040:    fax=#**00040@01.oap.local
+
+
+
+
+
